@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 1rem; color: #222; }
+header h1 { margin: 0 0 1rem 0; }
+.findings { list-style: none; padding: 0; }
+.findings li { padding: 0.5rem; border-bottom: 1px solid #ddd; }
+.flashes { list-style: none; padding: 0; }
+.flash.info { color: #0645ad; }
+.flash.warning { color: #a04d00; }
+footer { margin-top: 2rem; font-size: 0.9rem; color: #666; }

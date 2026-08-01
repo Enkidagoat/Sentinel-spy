@@ -1,0 +1,24 @@
+# Example config for sentinel-spy (simulation mode)
+app:
+  simulation: true
+  scan_interval_seconds: 300
+
+scanner:
+  # In simulation mode the scanner returns example posts.
+  # When adding real connectors, only include sources you are authorized to access.
+  sources:
+    - name: example_source
+      type: simulator
+      params: {}
+
+scoring:
+  keywords:
+    high_risk: ["leak", "leaked", "password", "credentials", "ssn"]
+    medium_risk: ["breach", "exposed", "compromised"]
+  thresholds:
+    high: 10
+    medium: 5
+
+dashboard:
+  host: 127.0.0.1
+  port: 5000

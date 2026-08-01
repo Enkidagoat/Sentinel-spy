@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Latest findings (simulated)</h2>
+  <ul class="findings">
+    {% for f in findings %}
+      <li>
+        <div class="meta">
+          <strong>ID:</strong> {{ f.item.id }} |
+          <strong>Source:</strong> {{ f.item.source }} |
+          <strong>Score:</strong> {{ f.score.level }} ({{ f.score.score }})
+        </div>
+        <p>{{ f.item.text }}</p>
+        <p>
+          <a href="{{ url_for('simulate', item_id=f.item.id) }}">Simulate remediation</a>
+        </p>
+        {% if f.simulation %}
+          <details>
+            <summary>Simulation details</summary>
+            <pre>{{ f.simulation }}</pre>
+          </details>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
